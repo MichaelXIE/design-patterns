@@ -26,7 +26,7 @@ public class VisitorTest {
 
     @Test
     public void exportDotInfoInJsonFormat() {
-        Dot dot =  new Dot(0,0);
+        Dot dot = new Dot(0, 0);
         assertEquals("{'x':0,'y':0}", new JsonExporter().visit(dot));
     }
 
@@ -44,8 +44,35 @@ public class VisitorTest {
 
     @Test
     public void exportDotInfoInXmlFormat() {
-        Dot dot =  new Dot(0,0);
+        Dot dot = new Dot(0, 0);
         assertEquals("<xml><dot><x>0</x><y>0</y></dot></xml>", new XmlExporter().visit(dot));
     }
-    
+
+    @Test
+    public void exportRectangleInfoInXmlFormatIsNotAllowed() {
+        Rectangle rectangle = new Rectangle(0, 0, 1, 1);
+        assertEquals("NotAllowed", new XmlExporter().visit(rectangle));
+    }
+
+    @Test
+    public void exportDotInfoInJsonFormatWithVisitor() {
+        Dot dot = new Dot(0, 0);
+        JsonExporter jsonExporter = new JsonExporter();
+        assertEquals("{'x':0,'y':0}", dot.accept(jsonExporter));
+    }
+
+    @Test
+    public void exportCircleInfoInJsonFormatWithVisitor() {
+        Circle circle = new Circle(0, 0, 1);
+        JsonExporter jsonExporter = new JsonExporter();
+        assertEquals("{'x':0,'y':0,'radius':1}", circle.accept(jsonExporter));
+    }
+
+    @Test
+    public void exportRectangleInfoInJsonFormatWithVisitor() {
+        Rectangle rectangle = new Rectangle(0, 0, 1, 1);
+        JsonExporter jsonExporter = new JsonExporter();
+        assertEquals("{'x':0,'y':0,'width':1,'height':1}", rectangle.accept(jsonExporter));
+    }
+
 }

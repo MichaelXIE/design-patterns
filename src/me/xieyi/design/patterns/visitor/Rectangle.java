@@ -33,4 +33,8 @@ public class Rectangle implements Shape {
     public int getHeight() {
         return height;
     }
+
+    public String accept(JsonExporter jsonExporter) {
+        return jsonExporter.visit(this);
+    }
 }

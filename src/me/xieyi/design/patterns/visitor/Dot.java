@@ -20,4 +20,8 @@ public class Dot implements Shape{
     public int getY() {
         return y;
     }
+
+    public String accept(JsonExporter jsonExporter) {
+        return jsonExporter.visit(this);
+    }
 }
