@@ -82,4 +82,11 @@ public class VisitorTest {
         assertEquals("<xml><dot><x>0</x><y>0</y></dot></xml>", dot.accept(visitor));
     }
 
+
+    @Test
+    public void exportCircleInfoInXmlFormatWithVisitor() {
+        Circle circle = new Circle(0, 0, 1);
+        Visitor visitor = new XmlExporter();
+        assertEquals("<xml><circle><x>0</x><y>0</y><radius>1</radius></circle></xml>", circle.accept(visitor));
+    }
 }
