@@ -18,8 +18,7 @@ public class Circle extends Dot {
         return radius;
     }
 
-    @Override
-    public String accept(JsonExporter jsonExporter){
-        return jsonExporter.visit(this);
+    public String accept(Visitor visitor) {
+        return visitor.visit(this);
     }
 }

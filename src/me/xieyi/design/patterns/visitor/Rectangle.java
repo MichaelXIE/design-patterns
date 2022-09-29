@@ -34,7 +34,7 @@ public class Rectangle implements Shape {
         return height;
     }
 
-    public String accept(JsonExporter jsonExporter) {
-        return jsonExporter.visit(this);
+    public String accept(Visitor visitor) {
+        return visitor.visit(this);
     }
 }
