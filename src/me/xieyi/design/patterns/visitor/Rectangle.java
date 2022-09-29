@@ -34,6 +34,7 @@ public class Rectangle implements Shape {
         return height;
     }
 
+    @Override
     public String accept(Visitor visitor) {
         return visitor.visit(this);
     }
