@@ -12,4 +12,12 @@ public class Dot implements Shape{
     public String draw() {
         return x + "," + y;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }

@@ -13,4 +13,8 @@ public class Circle extends Dot {
     public String draw() {
         return x + "," + y + "," + radius;
     }
+
+    public int getRadius() {
+        return radius;
+    }
 }

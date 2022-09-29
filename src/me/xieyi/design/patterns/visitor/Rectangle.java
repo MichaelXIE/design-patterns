@@ -17,4 +17,20 @@ public class Rectangle implements Shape {
     public String draw() {
         return x + "," + y + "," + width + "," + height;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 }
